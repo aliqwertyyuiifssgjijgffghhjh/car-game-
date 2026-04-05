@@ -1,0 +1,95 @@
+:root {
+  color-scheme: dark;
+  --bg: #090d1a;
+  --panel: #101827;
+  --road: #202637;
+  --line: #f7f7f7;
+  --player: #41a9ff;
+  --enemy: #ff5f7a;
+  --text: #eef2ff;
+  --accent: #78ff9b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #18243f, var(--bg));
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.app {
+  width: min(90vw, 420px);
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.instructions {
+  margin: 0.5rem 0 1rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #394258;
+  border-radius: 0.75rem;
+  background: color-mix(in oklab, var(--panel), black 15%);
+}
+
+.game-wrapper {
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  border-radius: 1rem;
+  border: 2px solid #3f4f73;
+  background: var(--road);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.8rem;
+  text-align: center;
+  border-radius: 1rem;
+  background: rgba(8, 11, 20, 0.82);
+  padding: 1rem;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+#startBtn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  font-size: 1rem;
+  color: #021325;
+  background: linear-gradient(135deg, var(--accent), #8af6ff);
+  cursor: pointer;
+}
+
+#startBtn:hover {
+  filter: brightness(1.08);
+}
